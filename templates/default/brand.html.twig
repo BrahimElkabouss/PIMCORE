@@ -1,0 +1,13 @@
+{% include 'default/header.html.twig' %}
+<div class="container">
+
+    <ul class="logogrid">
+        {% for brand in brands %}
+        <li class="logogrid__item">
+            <h2><a href="{{ path('brand_detail', {'brandName': brand.name}) }}">{{ brand.name }}</a></h2>
+        </li>
+        {% endfor %}
+    </ul>
+     
+  </div>
+{% include 'default/footer.html.twig' %}

@@ -1,0 +1,114 @@
+pimcore_data_hub:
+    configurations:
+        Marketing_Models:
+            general:
+                active: true
+                type: dataImporterDataObject
+                name: Marketing_Models
+                description: ''
+                group: ''
+                path: null
+                modificationDate: 1700662499
+                createDate: 1700573987
+            loaderConfig:
+                type: asset
+                settings:
+                    assetPath: '/brands Csv/brands.csv'
+            interpreterConfig:
+                type: csv
+                settings:
+                    skipFirstRow: true
+                    delimiter: ;
+                    enclosure: '"'
+                    escape: \
+            resolverConfig:
+                elementType: dataObject
+                dataObjectClassId: MarketingModel
+                loadingStrategy:
+                    type: attribute
+                    settings:
+                        dataSourceIndex: '2'
+                        attributeName: Name
+                        language: ''
+                        includeUnpublished: true
+                createLocationStrategy:
+                    type: staticPath
+                    settings:
+                        path: '/Marketing Models'
+                locationUpdateStrategy:
+                    type: noChange
+                publishingStrategy:
+                    type: noChangePublishNew
+            processingConfig:
+                executionType: parallel
+                idDataIndex: ''
+            mappingConfig:
+                -
+                    label: 'name [0]'
+                    dataSourceIndex:
+                        - '0'
+                    transformationResultType: dataObject
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: brand
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    settings:
+                        loadStrategy: attribute
+                        attributeDataObjectClassId: brand
+                        attributeName: name
+                        partialMatch: 'on'
+                        attributeLanguage: ''
+                        loadUnpublished: 'on'
+                    transformationPipeline:
+                        -
+                            settings:
+                                loadStrategy: attribute
+                                attributeDataObjectClassId: brand
+                                attributeName: name
+                                partialMatch: 'on'
+                                attributeLanguage: ''
+                                loadUnpublished: 'on'
+                            type: loadDataObject
+                -
+                    label: 'launch_date [3]'
+                    dataSourceIndex:
+                        - '3'
+                    settings:
+                        format: d/m/Y
+                    transformationResultType: date
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: launch_date
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline:
+                        -
+                            settings:
+                                format: d/m/Y
+                            type: date
+                -
+                    label: 'new column'
+                    dataSourceIndex:
+                        - '2'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: Name
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+            executionConfig:
+                scheduleType: recurring
+                cronDefinition: ''
+                scheduledAt: ''
+            permissions:
+                user: {  }
+                role: {  }
+            workspaces: {  }

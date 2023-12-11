@@ -1,0 +1,19 @@
+_pimcore:
+    resource: "@PimcoreCoreBundle/config/routing.yaml"
+
+app:
+    resource: "../src/Controller/"
+    type: annotation
+
+# Define a route for the brand page
+# brandsName:
+#     path: /brandsName
+#     controller: App\Controller\BrandController::brandsName
+
+brand_page:
+    path: /brand
+    controller: App\Controller\BrandController::brandPage
+
+brand_detail:
+    path: '/brand/{brandName}'
+    controller: App\Controller\BrandController::showBrandDetail

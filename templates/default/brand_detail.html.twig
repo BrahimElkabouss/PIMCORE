@@ -1,0 +1,17 @@
+{% include 'default/header.html.twig' %}
+<div class="product-card-container">
+    {% for model in models %}
+    <div class="product-card">
+        <div class="product-card-image">
+            <!-- Add an image of the model here, if available -->
+        </div>
+        <div class="product-card-details">
+            <h3>{{ model.name }}</h3>
+            <p><strong>Brand:</strong> {{ model.brand }}</p>
+            <p><strong>Launch Price:</strong> {{ model.launch_price }}</p>
+            <p><strong>Launch Date:</strong> {{ model.launch_date|date('Y-m-d') }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% include 'default/footer.html.twig' %}
