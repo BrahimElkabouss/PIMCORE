@@ -5,19 +5,17 @@
  * Variants: no
  *
  * Fields Summary:
- * - name [input]
- * - Logo [image]
- * - test [date]
+ * - text [textarea]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => 'brand',
-   'name' => 'Brand',
+   'id' => '2',
+   'name' => 'TestClass',
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1702387839,
+   'modificationDate' => 1702387736,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -61,9 +59,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'children' => 
         array (
           0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'name',
-             'title' => 'Name',
+          Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
+             'name' => 'text',
+             'title' => 'Text',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -79,63 +77,11 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
-             'unique' => false,
+             'maxLength' => NULL,
              'showCharCount' => false,
-             'width' => '',
-             'defaultValueGenerator' => '',
-          )),
-          1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
-             'name' => 'Logo',
-             'title' => 'Logo',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'uploadPath' => '',
-             'width' => '',
+             'excludeFromSearchIndex' => false,
              'height' => '',
-          )),
-          2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Date::__set_state(array(
-             'name' => 'test',
-             'title' => 'Test',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'defaultValue' => NULL,
-             'useCurrentDate' => false,
-             'columnType' => 'bigint(20)',
-             'defaultValueGenerator' => '',
+             'width' => '',
           )),
         ),
          'locked' => false,
